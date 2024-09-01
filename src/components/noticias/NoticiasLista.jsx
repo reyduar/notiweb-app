@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const noticiasData = [
   {
@@ -21,32 +20,15 @@ const noticiasData = [
   // Agrega más noticias según sea necesario
 ];
 
-function Noticias() {
+function NoticiasLista() {
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();
 
   const filteredNoticias = noticiasData.filter((noticia) =>
     noticia.titulo.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleCrearNoticia = (event) => {
-    event.preventDefault();
-    // Aquí puedes agregar la lógica para registrar al usuario
-    // Por ejemplo, redirigir al usuario al login después del registro
-    navigate("/crear-noticia");
-  };
-
   return (
     <div className="p-6">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Noticias</h1>
-        <button
-          onClick={handleCrearNoticia}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Crear Noticia
-        </button>
-      </div>
       <div className="mb-4">
         <input
           type="text"
@@ -77,4 +59,4 @@ function Noticias() {
   );
 }
 
-export default Noticias;
+export default NoticiasLista;

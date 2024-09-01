@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaArtstation, FaUserCircle } from "react-icons/fa";
+import React from "react";
+
+import { FaArtstation } from "react-icons/fa";
+import { FaPowerOff } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    navigate("/login");
   };
 
   return (
@@ -16,30 +19,11 @@ export const Header = () => {
       </div>
       <div className="relative">
         <button
-          onClick={toggleDropdown}
+          onClick={logout}
           className="flex items-center text-white focus:outline-none"
         >
-          <FaUserCircle className="text-2xl" />
+          <FaPowerOff className="text-2xl" />
         </button>
-        {isDropdownOpen && (
-          <div className="absolute right-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg">
-            <ul>
-              <li>
-                <Link
-                  to="/perfil"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                >
-                  Perfil de Usuario
-                </Link>
-              </li>
-              <li>
-                <Link to="/login" className="block px-4 py-2 hover:bg-gray-100">
-                  Logout
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
       </div>
     </header>
   );

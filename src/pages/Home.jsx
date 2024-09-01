@@ -1,4 +1,5 @@
 import React from "react";
+import NoticiasLista from "../components/noticias/NoticiasLista";
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
         personalizar este espacio para mostrar artículos, imágenes y más
         información relevante para tus usuarios.
       </p>
+      <NoticiasLista />
     </div>
   );
 }
