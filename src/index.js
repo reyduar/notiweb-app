@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Noticias from "./pages/Noticias";
 import PerfilUsuario from "./pages/PerfilUsuario";
 import CrearNoticia from "./pages/CrearNoticia";
+import NotFound from "./pages/NotFound";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,9 +23,10 @@ root.render(
           <Route path="noticias" element={<Noticias />} />
           <Route path="crear-noticia" element={<CrearNoticia />} />
           <Route path="perfil" element={<PerfilUsuario />} />
+          {/* Otras rutas aquí */}
+          <Route path="*" element={<NotFound />} /> {/* Ruta NotFound */}
         </Route>
       </Routes>
     </Router>
-    ,
   </React.StrictMode>
 );
