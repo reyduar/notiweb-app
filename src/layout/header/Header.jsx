@@ -1,21 +1,11 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaArtstation, FaUserCircle } from "react-icons/fa";
 
 export const Header = () => {
-  const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const handleLogout = () => {
-    // Aquí puedes limpiar la sesión del usuario, eliminar tokens, etc.
-    // Por ejemplo, puedes usar localStorage.clear() si guardaste datos allí.
-    localStorage.clear(); // Limpia el almacenamiento local
-
-    // Navegar a la página de login
-    navigate("/login");
   };
 
   return (

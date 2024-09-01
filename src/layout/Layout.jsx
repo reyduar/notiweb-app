@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Registro from "../pages/Registro";
 import Noticias from "../pages/Noticias";
 import PerfilUsuario from "../pages/PerfilUsuario";
+import CrearNoticia from "../pages/CrearNoticia";
 
 function Layout() {
   return (
@@ -29,6 +30,7 @@ function Layout() {
             {/* Rutas protegidas con layout */}
             <Route path="/" element={<Home />} />
             <Route path="/noticias" element={<Noticias />} />
+            <Route path="/crear-noticia" element={<CrearNoticia />} />
             <Route path="/perfil" element={<PerfilUsuario />} />
           </Routes>
         </main>

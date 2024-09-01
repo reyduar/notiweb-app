@@ -1,5 +1,4 @@
 import React from "react";
-import { IoHomeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { FaHome, FaNewspaper } from "react-icons/fa";
 
